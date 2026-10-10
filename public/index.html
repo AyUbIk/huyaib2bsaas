@@ -1,1 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULTRA-MEGA-CORP 3000 | IPO READY</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --card-bg: #111115;
+            --accent-green: #00ff66;
+            --accent-red: #ff0055;
+            --accent-cyan: #00e5ff;
+            --text-main: #e0e0e0;
+        }
 
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px dashed var(--accent-green);
+            padding-bottom: 20px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        h1 {
+            color: var(--accent-green);
+            text-shadow: 0 0 10px var(--accent-green);
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #222;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card h2 {
+            font-size: 1.1rem;
+            margin-top: 0;
+            color: var(--accent-cyan);
+            border-bottom: 1px solid #333;
+            padding-bottom: 8px;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-green);
+            margin: 15px 0;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        button {
+            background: #222;
+            color: #fff;
+            border: 1px solid var(--accent-green);
+            padding: 12px;
+            font-family: inherit;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background: var(--accent-green);
+            color: #000;
+            box-shadow: 0 0 15px var(--accent-green);
+        }
+
+        button.danger {
+            border-color: var(--accent-red);
+        }
+
+        button.danger:hover {
+            background: var(--accent-red);
+            color: #fff;
+            box-shadow: 0 0 15px var(--accent-red);
+        }
+
+        .console-log {
+            background: #000;
+            border: 1px solid #333;
+            padding: 10px;
+            height: 120px;
+            overflow-y: scroll;
+            font-size: 0.8rem;
+            color: #00ff00;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent-red);
+            color: #fff;
+            font-size: 0.6rem;
+            padding: 3px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.7rem;
+            color: #555;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>B2B SaaS P2P Quantum AI-Corp</h1>
+        <div class="subtitle">Статус: Запущено на Pentum E5700 | Хостинг: Бесплатный Tier Vercel</div>
+    </header>
+
+    <div class="dashboard">
+
+        <!-- Карта 1: Баланс -->
+        <div class="card">
+            <h2>💰 Stripe Баланс</h2>
+            <div class="metric-value" id="balance">$5,000,000.00</div>
+            <p style="font-size: 0.8rem; color: #aaa;">Авто-списание денег у конкурентов: <span style="color: var(--accent-green);">АКТИВНО</span></p>
+        </div>
+
+        <!-- Карта 2: Нагрузка -->
+        <div class="card">
+            <h2>⚡ Нагрузка Ядра</h2>
+            <div class="metric-value">10B RPS</div>
+            <p style="font-size: 0.8rem; color: #aaa;">Держатель: Синяя Изолента v2.0</p>
+            <div class="badge">OVERCLOCK</div>
+        </div>
+
+        <!-- Карта 3: Кнопки Маркетинга -->
+        <div class="card">
+            <h2>🚀 Панель Управления</h2>
+            <div class="btn-group">
+                <button onclick="makePretty()">✨ Сделать красиво</button>
+                <button class="danger" onclick="blowMarket()">💥 Взорвать рынок</button>
+            </div>
+        </div>
+
+        <!-- Карта 4: Питч Инвесторам -->
+        <div class="card">
+            <h2>🤝 Модуль «Инвестор»</h2>
+            <p style="font-size: 0.8rem;">Если спрашивают про LTV, CAC или юнит-экономику:</p>
+            <button onclick="answerInvestor()">Ответить инвестору</button>
+        </div>
+
+    </div>
+
+    <!-- Консоль -->
+    <div style="width: 100%; max-width: 900px; margin-top: 20px;">
+        <h3>Системный Лог (04:20 AM):</h3>
+        <div class="console-log" id="log">
+            [04:20:00] [SYSTEM] Квантовое ядро заведено.<br>
+            [04:20:01] [SUCCESS] Паяльник разогрет до 450°C.<br>
+            [04:20:02] [NET] Подтянуты данные из ближайшей туманности.<br>
+        </div>
+    </div>
+
+    <footer>
+        Сделано за один вечер до того, как остыл чай. Работает исключительно на чистом энтузиазме.
+    </footer>
+
+    <script>
+        let currentBalance = 5000000;
+
+        function logMessage(msg) {
+            const logBox = document.getElementById('log');
+            const now = new Date().toLocaleTimeString();
+            logBox.innerHTML += `[${now}] ${msg}<br>`;
+            logBox.scrollTop = logBox.scrollHeight;
+        }
+
+        function makePretty() {
+            document.body.style.boxShadow = "inset 0 0 100px rgba(0, 255, 102, 0.2)";
+            setTimeout(() => document.body.style.boxShadow = "none", 1000);
+            logMessage("[ACTION] Нажата кнопка 'Сделать красиво'. Дизайн обновлен до космического уровня.");
+        }
+
+        function blowMarket() {
+            currentBalance += 1500000;
+            document.getElementById('balance').innerText = '$' + currentBalance.toLocaleString('en-US') + '.00';
+            logMessage("[SUCCESS] Рынок взорван! Конкуренты закрылись, +$1,500,000 на Stripe.");
+        }
+
+        function answerInvestor() {
+            alert("ОТВЕТ ИИ: Наша синергия конвертирует LTV в бесконечность, завалите ебало и делайте чек!");
+            logMessage("[INVESTOR] Инвестор получил ответ и подписывает термшит на $100M.");
+        }
+
+        // Симуляция фонового списания средств
+        setInterval(() => {
+            currentBalance += Math.floor(Math.random() * 500) + 100;
+            document.getElementById('balance').innerText = '$' + currentBalance.toLocaleString('en-US') + '.00';
+        }, 3000);
+    </script>
+
+</body>
+</html>
